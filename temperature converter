@@ -1,0 +1,38 @@
+#temperature converter
+from tkinter import *
+pop=Tk()
+pop.geometry('900x500')
+pop.resizable(0,0)
+pop.title('Temperature Converter')
+
+def ctof():
+ c=float(t.get())
+ f=(9*c)/5+32
+ lblres.config(text='Result= '+str(f))
+
+
+def ftoc():
+ f1=float(t.get())
+ c1=(f1-32)*5/9
+ lblres.config(text='Result= '+str(c1))
+ 
+lbl1=Label(pop,text='Temperature converter',fg='orange',font=('algerian',20,'bold'))
+lbl1.place(x=250,y=30)
+
+lbl2=Label(pop,text='Enter Temperature',fg='purple',font=('ariel',17))
+lbl2.place(x=70,y=100)
+
+t=StringVar()
+ent=Entry(pop,bg='lightcyan',fg='blue',font=('arial',17),textvariable=t,bd=4)
+ent.place(x=400,y=100)
+btn1=Button(pop,text='C to F',fg='blue',font=('arial',15),command=ctof)
+btn1.place(x=100,y=200)
+
+btn2=Button(pop,text='F to C',fg='blue',font=('arial',15),command=ftoc)
+btn2.place(x=700,y=200)
+
+lblres=Label(pop,text='Result',fg='purple',font=('ariel',17))
+lblres.place(x=150,y=350)
+
+
+pop.mainloop()
